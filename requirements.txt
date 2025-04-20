@@ -10,3 +10,4 @@ PyYAML==6.0.2
 soupsieve==2.6
 sqlparse==0.5.3
 typing_extensions==4.13.0
+mysqlclient==2.2.7
