@@ -74,6 +74,6 @@ fabric.properties
 venv/
 .env
 .DS_Store
-Dockerfile1
-Dockerfile2
+Dockerfile
 study.txt
+backup.sql
