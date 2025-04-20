@@ -77,3 +77,4 @@ venv/
 Dockerfile
 study.txt
 backup.sql
+export.py
