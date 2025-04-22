@@ -78,3 +78,4 @@ Dockerfile
 study.txt
 backup.sql
 export.py
+docker-compose.yml
