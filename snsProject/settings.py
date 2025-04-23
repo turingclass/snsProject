@@ -65,7 +65,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account',
     'accountapp',
     'bootstrap4',
     'profileapp',
@@ -123,7 +122,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
-        'USER': 'root',
+        'USER': 'turing',
         'PASSWORD': read_secret('MYSQL_PASSWORD'),
         'HOST': 'mysql',
         'PORT': '3306',
