@@ -73,9 +73,9 @@ fabric.properties
 .idea/
 venv/
 .env
-.DS_Store
 Dockerfile
-study.txt
-backup.sql
-export.py
+Dockerfile4
+Dockerfile5
+db.sqlite3
 docker-compose.yml
+study.txt
