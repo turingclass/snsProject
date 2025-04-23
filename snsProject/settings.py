@@ -115,7 +115,7 @@ DATABASES = {
         'NAME': 'django',
         'USER': 'turing',
         'PASSWORD': '0623',
-        'HOST': 'mysql',
+        'HOST': 'mariadb',
         'PORT': '3306',
     }
 }
