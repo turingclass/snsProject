@@ -13,8 +13,8 @@ import os
 from pathlib import Path
 import environ
 from django.urls import reverse_lazy
-import pymysql
-pymysql.install_as_MySQLdb()
+# import pymysql
+# pymysql.install_as_MySQLdb()
 
 def read_secret(secret_name):
     file = open('/run/secrets/' + secret_name)
