@@ -14,15 +14,6 @@ from pathlib import Path
 import environ
 from django.urls import reverse_lazy
 
-
-def read_secret(secret_name):
-    file = open('/run/secrets/' + secret_name)
-    secret = file.read()
-    secret = secret.rstrip().lstrip()
-    file.close()
-    return secret
-
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 #
 env = environ.Env(
@@ -38,7 +29,7 @@ environ.Env.read_env(
 DEBUG = env('DEBUG')
 
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
-SECRET_KEY = read_secret('DJANGO_SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -109,24 +100,14 @@ WSGI_APPLICATION = 'snsProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'turing',
-        'PASSWORD': read_secret('MYSQL_PASSWORD'),
-        'HOST': 'mysql',
-        'PORT': '3306',
-    }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -166,12 +147,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# 아래 부분 추가
 STATIC_ROOT = os.path.join(BASE_DIR, 'collect_static')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = reverse_lazy('articleapp:list')
-LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:logout')
 
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': '/Users/gimtaegyeong/'}

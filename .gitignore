@@ -76,6 +76,4 @@ venv/
 Dockerfile
 Dockerfile4
 Dockerfile5
-db.sqlite3
-docker-compose.yml
 study.txt
