@@ -73,7 +73,8 @@ fabric.properties
 .idea/
 venv/
 .env
-Dockerfile
+Dockerfile3
 Dockerfile4
 Dockerfile5
 study.txt
+db.sqlite3
